@@ -1,0 +1,329 @@
+/* Abscanner - Brown and Black Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-brown: #3E2723;
+    --secondary-brown: #5D4037;
+    --light-brown: #8D6E63;
+    --dark-brown: #1B0000;
+    --accent-gold: #D4AF37;
+    --text-light: #F5F5F5;
+    --text-dark: #212121;
+    --error-red: #D32F2F;
+    --success-green: #388E3C;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-brown) 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid var(--accent-gold);
+}
+
+.logo h1 {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--light-brown);
+    font-style: italic;
+}
+
+/* Main Content */
+.main-content {
+    background: rgba(93, 64, 55, 0.4);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Upload Section */
+.upload-section {
+    text-align: center;
+}
+
+.upload-section h2 {
+    color: var(--accent-gold);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #B8860B 100%);
+    color: var(--dark-brown);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-brown) 0%, var(--light-brown) 100%);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(141, 110, 99, 0.4);
+}
+
+.btn-capture {
+    background: var(--success-green);
+    color: white;
+    margin: 20px 10px;
+}
+
+.btn-stop {
+    background: var(--error-red);
+    color: white;
+    margin: 20px 10px;
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Webcam Container */
+.webcam-container {
+    margin: 30px auto;
+    max-width: 640px;
+}
+
+#webcam {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Preview Container */
+.preview-container {
+    margin: 30px auto;
+    max-width: 640px;
+}
+
+#previewImage {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 30px;
+}
+
+.results-section h2 {
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.result-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid var(--light-brown);
+}
+
+.emotion-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emotion-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.emotion-display h3 {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+}
+
+.confidence {
+    font-size: 1.3rem;
+    color: var(--light-brown);
+}
+
+#confidenceValue {
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.processed-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+#resultImage {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Emotions Chart */
+.emotions-chart {
+    margin: 30px 0;
+}
+
+.emotions-chart h4 {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.emotion-bar {
+    margin-bottom: 15px;
+}
+
+.emotion-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.emotion-bar-fill-container {
+    background: rgba(0, 0, 0, 0.3);
+    height: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.emotion-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--light-brown) 100%);
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 50px;
+}
+
+.spinner {
+    border: 5px solid rgba(212, 175, 55, 0.3);
+    border-top: 5px solid var(--accent-gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+}
+
+/* Error Message */
+.error-message {
+    background: rgba(211, 47, 47, 0.2);
+    border: 2px solid var(--error-red);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#errorText {
+    color: var(--error-red);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: var(--light-brown);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .emotion-display h3 {
+        font-size: 2rem;
+    }
+    
+    .emotion-icon {
+        font-size: 4rem;
+    }
+}

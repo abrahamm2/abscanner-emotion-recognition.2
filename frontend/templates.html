@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abscanner - Facial Emotion Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🎭 Abscanner</h1>
+                <p class="tagline">Facial Emotion Recognition System</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>Choose Detection Method</h2>
+                
+                <div class="button-group">
+                    <button id="webcamBtn" class="btn btn-primary">
+                        📹 Use Webcam
+                    </button>
+                    <button id="uploadBtn" class="btn btn-secondary">
+                        📁 Upload Image
+                    </button>
+                </div>
+
+                <!-- File Upload Input (Hidden) -->
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                <!-- Webcam Video -->
+                <div id="webcamContainer" class="webcam-container" style="display: none;">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <button id="captureBtn" class="btn btn-capture">📸 Capture</button>
+                    <button id="stopWebcamBtn" class="btn btn-stop">❌ Stop Webcam</button>
+                </div>
+
+                <!-- Preview Image -->
+                <div id="previewContainer" class="preview-container" style="display: none;">
+                    <img id="previewImage" alt="Preview">
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Detection Results</h2>
+                
+                <div class="result-card">
+                    <div class="emotion-display">
+                        <span class="emotion-icon" id="emotionIcon">😊</span>
+                        <h3 id="emotionLabel">Happy</h3>
+                        <p class="confidence">Confidence: <span id="confidenceValue">0%</span></p>
+                    </div>
+
+                    <div class="processed-image">
+                        <img id="resultImage" alt="Processed Result">
+                    </div>
+
+                    <!-- All Emotions Bar Chart -->
+                    <div class="emotions-chart">
+                        <h4>All Emotions Detected:</h4>
+                        <div id="emotionsBar"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="tryAgainBtn" class="btn btn-primary">🔄 Try Again</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing emotion...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;">
+                <p id="errorText"></p>
+                <button id="closeErrorBtn" class="btn btn-small">Close</button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by TensorFlow & OpenCV | Abscanner © 2024</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
