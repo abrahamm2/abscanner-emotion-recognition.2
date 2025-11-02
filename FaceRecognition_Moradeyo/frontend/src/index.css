@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg border border-gray-200 transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+  }
+
+  .input-file {
+    @apply block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Emotion badge styles */
+.emotion-badge {
+  @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold;
+}
+
+.emotion-happy {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.emotion-sad {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.emotion-angry {
+  @apply bg-red-100 text-red-800;
+}
+
+.emotion-surprised {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.emotion-neutral {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.emotion-fear {
+  @apply bg-orange-100 text-orange-800;
+}
+
+.emotion-disgust {
+  @apply bg-green-100 text-green-800;
+}
